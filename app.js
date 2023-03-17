@@ -240,7 +240,7 @@ console.log(userid)
 
 
       
-      QR.toFile(`./public/${userid}.png`, 'http://localhost:3000/login2?email='+email+'&&password='+password, {
+      QR.toFile(`./public/${userid}.png`, 'https://hackaton-himq.onrender.com/login2?email='+email+'&&password='+password, {
         errorCorrectionLevel: 'H'
       }, function(err) {
         if (err) throw err;
@@ -249,13 +249,6 @@ console.log(userid)
         window.location.href='/usuarios';
         </script>`)
       });
-
-
-
-
-
-
-
 
       });
 
