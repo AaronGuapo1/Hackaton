@@ -1,0 +1,121 @@
+
+<header>
+    <nav id="navbar">
+    <div id="navbar-child">
+        <li><a id="Inicio" href="/"  class="btn btn.info navbar-childs" href="">Inicio</a></li>
+    <% if(!loggedIn){ %>
+        <li> <a href="/logearse" class="btn btn.info navbar-childs" id="Logearse">Admin</a></li>  
+        <% } %> 
+        <% if(loggedIn && role ==="admin"){ %>
+        <li> <a href="/registrarse" class="btn btn.info navbar-childs" id="Registrarse">Registrar</a></li>
+        <li> <a href="/usuarios" class="btn btn.info navbar-childs" id="usuarios">Lista</a></li>
+        <% } %> 
+        <% if(loggedIn){ %>
+
+        <li> <a href="/auth/logout" class="btn btn.info navbar-childs" id="LogOut">LogOut</a></li>  
+        <% } %> 
+
+        </div>
+    </nav>
+</header>
+
+<style>
+
+    /*   Start global   */
+    
+    * {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: arial, tahoma;
+        list-style: none;
+        /*    outline: 1px solid brown;*/
+      }
+      
+      /*   End global   */
+      
+      /* .btn{
+        background-color: #5549b0;
+    
+      }
+      
+      header {
+        background-color: #c32525;
+        height: 50px;
+        justify-content: center;
+      } */
+      
+      /*   Start navigation bar   */
+      
+      #navbar {
+        height: 10vh;
+        width: 100vw;
+        background-color: #25874D;
+        font-size: small;
+      }
+      #navbar-child{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+        width: 100%;
+      }
+      .navbar-childs{
+        color: white;
+        font-size: larger;
+        transition: .2s;
+      }
+      .navbar-childs:hover{
+        color: rgb(202, 200, 200);
+        font-size: larger;
+      }
+    
+      .Registrarse {
+        margin-right: 25px;
+        margin-top: 17px;
+        justify-content: center;
+    
+      }
+      .Registrarse li {
+        text-align:center;
+        padding: 13px 13px;
+        font-size: 18px;
+        border-radius: 3px;
+        transition: all .7s ease-in-out;
+        justify-content: center;
+    
+      }
+      .Registrarse li a {
+        color: #EEE;
+        justify-content: center;
+    
+      }
+      .Logearse {
+        left:100px;
+    
+        margin-right: -200px;
+        margin-top: -47px;
+    
+      }
+      .Logearse li {
+        left:100px;
+        padding: 13px 13px;
+        font-size: 18px;
+        border-radius: 3px;
+        transition: all .7s ease-in-out;
+    
+      }
+      .Logearse li a {
+        color: #EEE;
+        left:100px;
+    
+      }
+
+      
+
+   
+    </style>

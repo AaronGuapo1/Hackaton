@@ -1,0 +1,67 @@
+<%- include('layouts/navbar'); -%>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/img/cuenta.webp')">
+    <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+              <div class="page-heading">
+            
+        </div>
+        
+        </div>
+        <h1 class="fw-bold" style="color: white;">Ingresar</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+<div class="container"> 
+  <div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
+
+<form action="/login" method="POST" enctype="multipart/form-data"> 
+
+
+
+  <div class="control-group mb-3 ">
+    <div class="input-group ">
+    <label class="input-group-text">Correo</label>
+<input type="text" class="form-control" placeholder="Correo" id="email"
+name="email">
+  </div>
+  </div>
+
+  <div class="control-group mb-3 ">
+    <div class="input-group ">
+    <label class="input-group-text">Contraseña</label>
+<input type="password" class="form-control" placeholder="Password" id="password"
+name="password">
+  </div>
+  </div>
+  
+  <div class="form-group position-relative">
+  <button type="submit" class="position-absolute top-0 start-50 translate-middle-x btn btn-outline-primary col-6 col-form-label" style="color: white; background-color: #87BBD7;"
+  id="sendMessageButton">Ingresar</button>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  
+
+
+</body>
+
+</html>
+
+
+
+
