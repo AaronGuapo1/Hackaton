@@ -160,6 +160,12 @@ app.post("/login", async (req, res) => {
       </script>`);
 
     }
+    if(user.role !== "admin"){
+      res.send(`<script>alert("¡No eres administrador!")
+      window.location.href='/logearse';
+      </script>`);
+
+    }
         if (user.email === email && user.password === password) {
           req.session.role = user.role
 
