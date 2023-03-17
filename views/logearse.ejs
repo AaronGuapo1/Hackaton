@@ -2,66 +2,68 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-
 <body>
+<main id="main-body">
+<form action="/login" method="POST" enctype="multipart/form-data" id="form-body"> 
 
-
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('/img/cuenta.webp')">
-    <div class="container position-relative px-4 px-lg-5">
-      <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-              <div class="page-heading">
-            
-        </div>
-        
-        </div>
-        <h1 class="fw-bold" style="color: white;">Ingresar</h1>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-<div class="container"> 
-  <div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
-
-<form action="/login" method="POST" enctype="multipart/form-data"> 
-
-
-
-  <div class="control-group mb-3 ">
-    <div class="input-group ">
-    <label class="input-group-text">Correo</label>
-<input type="text" class="form-control" placeholder="Correo" id="email"
-name="email">
-  </div>
+  <div class="form-container">
+  <img src="../img/imagen_2023-03-15_203601009-removebg-preview (1).png" style="height: 120px; width: 100px;" alt="">
   </div>
 
-  <div class="control-group mb-3 ">
-    <div class="input-group ">
-    <label class="input-group-text">Contraseña</label>
-<input type="password" class="form-control" placeholder="Password" id="password"
-name="password">
+
+  <div class="form-container">
+  <input type="text" class="form-control" placeholder="Correo" id="email" name="email"> 
   </div>
+
+  <div class="form-container">
+  <input type="password" class="form-control" placeholder="Password" id="password" name="password">
   </div>
   
-  <div class="form-group position-relative">
-  <button type="submit" class="position-absolute top-0 start-50 translate-middle-x btn btn-outline-primary col-6 col-form-label" style="color: white; background-color: #87BBD7;"
-  id="sendMessageButton">Ingresar</button>
+  <div class="form-container">
+  <button type="submit" id="sendMessageButton">Ingresar</button>
   </div>
-  </form>
-  </div>
-  </div>
-  </div>
-  
-
-
+  </form>  
+</main>
 </body>
-
 </html>
 
-
-
+<style>
+  #main-body{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-body{
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 80%;
+    gap: 20px;
+    
+  }
+  .form-container{
+    text-align: center;
+    
+  }
+  .form-container input {
+    height: 50px;
+    border: none;
+    border-bottom: #25874D solid 1px;
+    width: 100%;
+  }
+  .form-container button {
+    background-color: #25874D;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    height: 50px;
+    width: 100%;
+    transition: .2s
+  }
+  .form-container button:hover {
+    background-color: #1a5c34;
+  }
+</style>
 

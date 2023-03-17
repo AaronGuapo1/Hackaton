@@ -21,7 +21,16 @@
 
             <li> <a href="/auth/logout" class="btn btn.info navbar-childs" id="LogOut">LogOut</a></li>  
             <% } %> 
+            <% if(loggedIn && role !== "admin"){ %>
 
+              <li> <a href="/pendientes" class="btn btn.info navbar-childs" id="pendientes">Pendientes</a></li>  
+              <li> <a href="/transacciones" class="btn btn.info navbar-childs" id="transacciones">transacciones</a></li>  
+              <li> <a href="/perfil" class="btn btn.info navbar-childs" id="perfil">perfil</a></li>  
+              <li> <a href="/ticket" class="btn btn.info navbar-childs" id="ticket">ticket</a></li>  
+
+
+              <% } %> 
+  
           </div>
       </nav>
     </header>

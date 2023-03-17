@@ -8,7 +8,7 @@
       <style>
         #main-body{
             height: 90vh;
-            width: 80vw;
+            width: 99vw;
         }
         #sub-body{
             height: 100%;
@@ -35,7 +35,6 @@
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Apellidos</th>
                             <th>Correo</th>
                             <th>Alta</th>
                             <th>Descargar</th>
@@ -43,9 +42,9 @@
                     </thead>
                     <% for (var a = 0; a < usuarios.length; a++) { %>
                     <tr>
-                    <td>Nombre: <%= usuarios[a].first_name%></td>
-                    <td>Apellidos; <%= usuarios[a].last_name%></td>
-                    <td>Correo: <%= usuarios[a].email%></td>
+                    <td><%= usuarios[a].first_name%></td>
+
+                    <td><%= usuarios[a].email%></td>
                     <td> <form action="/qr/generate" method="POST" enctype="multipart/form-data"> 
                 
                         <input type="hidden" value="<%= usuarios[a].first_name%>" name="first_name">
@@ -56,11 +55,14 @@
                         <input type="hidden" value="<%= usuarios[a]._id%>" name="userId">
                         <button type="submit">Dar de alta alumno</button>
                         </form>
+                        <a href="/eliminar?usuarioId=<%=usuarios[a]._id%>">Dar de baja</a>
+
                     </td>
                     <td>
                         <a href="/credencial?usuarioId=<%=usuarios[a]._id%>">Credencial</a>
+
                     </td>
-                        
+
                     </tr>
                     <% } %> 
                 </table>

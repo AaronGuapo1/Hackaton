@@ -1,0 +1,57 @@
+<%- include('layouts/navbar'); -%>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheet/styles.css">
+    <title>Document</title>
+    <style>
+        .circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: relative;
+            margin: 150px auto auto auto;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main id="body">
+        <header id="header" style="align-items: center; justify-content:center">
+            <div></div>
+            <div class="header-child h-child-2" style="justify-content:inherit"> <a href="/" class="h2-child h2-child-2"></a></div>
+        </header>
+
+        <div>
+            <div class="circle">Aparta tu lugar</div>
+        </div>
+
+        <footer id="footer" style="position: fixed; bottom: 80px; border-bottom: 5px solid black;">
+            <div id="footer-child">
+               <p style="color: white;"><strong>¡Aparta turno de caja ahora!</strong></p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        let turno = Math.floor(Math.random() * 1000);
+        const circle = document.querySelector(".circle");
+    
+        circle.addEventListener("click", () => {
+            circle.innerHTML = `Turno: ${turno}`;
+        })
+    </script>
+</body>
+</html>

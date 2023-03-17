@@ -33,10 +33,13 @@ const credencial = require ('./controllers/credencial.js');
 const fs = require("fs")
 const fonts = require("./pdf/fonts")
 const styles = require("./pdf/styles")
-const pdfDescargar = require('./controllers/descargar');
+const pdfDescargar = require('./controllers/descargar.js');
 const inicioLogin =require('./controllers/inicioLogin.js')
 const transacciones =require('./controllers/transacciones.js')
-
+const eliminar = require('./controllers/eliminar.js')
+const pendientes = require('./controllers/pendientes.js')
+const perfil = require('./controllers/perfil.js')
+const ticket = require('./controllers/ticket.js')
 app.use(expressSession({
     secret: 'keyboard cat'
     }))
@@ -60,9 +63,14 @@ app.get('/usuarios', UsuariosController)
 app.get('/credencial', credencial)
 app.get('/inicioLogin',inicioLogin)
 app.get('/transacciones',transacciones)
+app.get('/perfil',perfil)
+app.get('/ticket',ticket)
 
+
+app.get('/pendientes',pendientes)
 
 app.use('/pdfDescargar', pdfDescargar )
+app.use('/eliminar', eliminar )
 
 
 app.post("/register", async (req, res) => {
@@ -146,7 +154,12 @@ app.post("/login", async (req, res) => {
     
         // Validate if user exist in our database
         const user = await User.findOne({ email });
-    
+    if(user === null ){
+      res.send(`<script>alert("¡Este usuario no existe!")
+      window.location.href='/logearse';
+      </script>`);
+
+    }
         if (user.email === email && user.password === password) {
           req.session.role = user.role
 
@@ -215,7 +228,7 @@ console.log(password)
 
     // user
     return res.send(`<script>alert("¡Logeado con éxito!")
-    window.location.href='/inicioLogin';
+    window.location.href='/transacciones';
     </script>`);
   }
   res.send(`<script>alert("¡Credenciales invalidas!")
